@@ -4,7 +4,9 @@ function ThisIsAComponent(){
 function Fname(){
     // instead => setCount(count+1);
 //  setCount(here goes the code or another func)
-  setCount((newCount)=>{newCount+1});  //as we know already here newCount store the "count" from the state(same for array,mapping overall key store)
+  setCount((newCount)=>{
+   return newCount+1;  //as js function need return
+  });  //as we know already here newCount store the "count" from the state(same for array,mapping overall key store)
 }
 return(
   //here goes html
