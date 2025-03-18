@@ -18,4 +18,20 @@ function Counter() {
 //when major changes happen react re render the component to laod updated data.(like use state,props,parent component etc)(
 
 clousure=>
-  
+  //A closure is when a function remembers variables from its parent scope even after the parent function has finished executing.
+  function outerFunction() {
+  let count = 0; // Variable inside outerFunction
+
+  function innerFunction() {
+    count++; // innerFunction remembers 'count'
+    console.log(count);
+  }
+
+  return innerFunction; // Returning function (closure)
+}
+
+const increment = outerFunction(); // outerFunction runs, returns innerFunction
+increment(); // Output: 1
+increment(); // Output: 2
+increment(); // Output: 3
+
