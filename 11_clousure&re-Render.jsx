@@ -1,3 +1,4 @@
+//mainly clousure concept is for the function(means depending of function structure the state value is updated or not)
 re-render =>
 
 function Counter() {
