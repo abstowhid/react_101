@@ -34,4 +34,5 @@ const increment = outerFunction(); // outerFunction runs, returns innerFunction
 increment(); // Output: 1
 increment(); // Output: 2
 increment(); // Output: 3
-
+//innerFunction is returned from outerFunction, but it remembers count, even though outerFunction has finished running.
+//This happens because of closure, which keeps count stored in memory.
