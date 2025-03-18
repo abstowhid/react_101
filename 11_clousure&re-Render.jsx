@@ -36,3 +36,39 @@ increment(); // Output: 2
 increment(); // Output: 3
 //innerFunction is returned from outerFunction, but it remembers count, even though outerFunction has finished running.
 //This happens because of closure, which keeps count stored in memory.
+
+
+
+//problem=>
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setTimeout(() => {
+      setCount(++count); // ❌ Closure keeps the old `count`
+      console.log(count); // ❌ Might print stale value!
+    }, 2000);
+  }
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+
+// solution=>
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setTimeout(() => {
+      setCount((prevCount) => prevCount + 1); // ✅ Uses latest state
+    }, 2000);
+  }
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+
+🔥 The Key Difference
+
+    When you use setCount(count + 1), it captures the count value at the time of execution.
+        If the state updates multiple times in quick succession, you might miss updates (stale state issue).
+    When you use setCount((prevCount) => prevCount + 1), React ensures that prevCount is always the latest state.
+  
