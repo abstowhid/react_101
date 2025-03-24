@@ -8,7 +8,9 @@ jsx allow to write markup language with javascript with some different rules and
 
 
 important about jsx=>
-
+1.we can write shorthand if else for better 
+2.inside function we can write regular javascript as we want.
+3.
 
 
 
