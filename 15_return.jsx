@@ -3,7 +3,7 @@
 
 2. when not needded?
    =>while on arrow function with single line , here don't need return
-3. arrow function with {} curly bracker
+3.nedded when arrow function with {} curly bracker needded(also same for the [] sqaure bracket)
      => here need return must.. because {} means multiple{specially in case object state}
 4.return must be inside of the {} curly bracket of the function..
 like =>
