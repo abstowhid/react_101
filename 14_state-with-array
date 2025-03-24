@@ -38,7 +38,7 @@ const MyComponent = () => {
         <div>
             <ul>
                 {fruits.map((fruit, index) => (
-                    <li key={index}>{fruit}</li>
+                   return <li key={index}>{fruit}</li>
                 ))}
             </ul>
             <button onClick={newFun}>btn</button>
