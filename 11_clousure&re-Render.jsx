@@ -1,3 +1,12 @@
+clousure=> 
+  think of i'm updating a value with function with a initial value 1, so the function will continuesly update my value (like i++ will increase 1 contnuesly) ,, but in normal or real case each time my initial value and first upate remain same for all time( like initial=1, and updated=2). to remove this isshue here come the clourusre , it remember the values.. so when the  value is updated to 2 now for the next step it will be 2=+1=3,,,without cousure each time it will be 1+1=2,,so clousure remember the updated value
+
+
+
+
+
+
+
 //mainly clousure concept is for the function(means depending of function structure the state value is updated or not)
 re-render =>
 
