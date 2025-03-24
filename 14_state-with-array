@@ -1,1 +1,20 @@
 
+//add items in array
+  const newFun = () => {
+        setFruits([...fruits, 'hello']);
+    };
+
+//remove items from array
+const fruits = ["apple", "banana", "mango", "orange"];
+console.log(fruits.slice(0, -1)); // ["apple", "banana", "mango"] (removes "orange")
+console.log(fruits.slice(1, -1)); // ["banana", "mango"] (starts from index 1, removes last)
+console.log(fruits.slice(0, 2));  // ["apple", "banana"] (keeps index 0 and 1, excludes 2)
+console.log(fruits.slice(1));     // ["banana", "mango", "orange"] (removes first element)
+console.log(fruits.slice(-2));    // ["mango", "orange"] (keeps last 2 elements)
+
+//implement in return=>
+<ul>
+    {fruits.map((value, index) => (
+        <li key={index}>{value}</li>  // ✅ Implicit return
+    ))}
+</ul>
