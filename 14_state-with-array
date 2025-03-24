@@ -1,6 +1,8 @@
 //add items
-const newFun = () => {
-        setFruits([...fruits, 'hello']);
+  const newFun = () => {
+        setFruits(() => {
+            return [...fruits, 'hello'];
+        });
     };
 //here spread operator takes and create a array of all the lement of the array(here fruits array)
 
@@ -27,8 +29,13 @@ import { useState } from "react";
 const MyComponent = () => {
     const [fruits, setFruits] = useState(['apple', 'banana', 'mango']);
 
-    const newFun = () => {
-        setFruits([...fruits, 'hello']);
+//    const newFun = () => {
+//        setFruits([...fruits, 'hello']);
+//    };
+  const newFun = () => {
+        setFruits((fu) => {
+            return [...fu, 'hello'];
+        });
     };
   const removeLast = () => {
     setFruits(fruits.slice(0, -1)); // ✅ Creates a new array
