@@ -1,12 +1,13 @@
-
-//add items in array
-  const newFun = () => {
+//add items
+const newFun = () => {
         setFruits([...fruits, 'hello']);
     };
+//here spread operator takes and create a array of all the lement of the array(here fruits array)
 
 //remove items from array
 const fruits = ["apple", "banana", "mango", "orange"];
 console.log(fruits.slice(0, -1)); // ["apple", "banana", "mango"] (removes "orange")
+//more example
 console.log(fruits.slice(1, -1)); // ["banana", "mango"] (starts from index 1, removes last)
 console.log(fruits.slice(0, 2));  // ["apple", "banana"] (keeps index 0 and 1, excludes 2)
 console.log(fruits.slice(1));     // ["banana", "mango", "orange"] (removes first element)
@@ -18,3 +19,33 @@ console.log(fruits.slice(-2));    // ["mango", "orange"] (keeps last 2 elements)
         <li key={index}>{value}</li>  // ✅ Implicit return
     ))}
 </ul>
+
+
+//final code========================================================================================
+import { useState } from "react";
+
+const MyComponent = () => {
+    const [fruits, setFruits] = useState(['apple', 'banana', 'mango']);
+
+    const newFun = () => {
+        setFruits([...fruits, 'hello']);
+    };
+  const removeLast = () => {
+    setFruits(fruits.slice(0, -1)); // ✅ Creates a new array
+};
+
+    return (
+        <div>
+            <ul>
+                {fruits.map((fruit, index) => (
+                    <li key={index}>{fruit}</li>
+                ))}
+            </ul>
+            <button onClick={newFun}>btn</button>
+        </div>
+    );
+};
+
+export default MyComponent;
+
+
